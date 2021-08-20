@@ -4,7 +4,11 @@
 // import Person from "./Models/Person";
 // import Pet from "./Models/Pet";
 
+import Animal from "./Models/Animal";
 import Component from "./Models/Component";
+import Dog from "./Models/Dog";
+import Cat from "./Models/Cat";
+import Pet from "./Models/Pet";
 
 // const animal = new Pet(10);
 // console.log(animal);
@@ -37,75 +41,88 @@ import Component from "./Models/Component";
 // const dog = new Dog("Bethoven", "Mark");
 // console.log(dog.lifeDurationInfo);
 
-class Validator {
-  static get(type) {
-    switch (type) {
-      case "phone":
-        return function (value) {
-          //+996(xxx)xxxxxx
-          const regex = /^\+996\(\d{3}\)\d{6}$/;
-          return regex.test(value);
-        };
-      case "inn":
-        return function (value) {
-          //[012]xxxxxxxxxxx
-          return true;
-        };
-    }
-  }
-}
+// class Validator {
+//   static get(type) {
+//     switch (type) {
+//       case "phone":
+//         return function (value) {
+//           //+996(xxx)xxxxxx
+//           const regex = /^\+996\(\d{3}\)\d{6}$/;
+//           return regex.test(value);
+//         };
+//       case "inn":
+//         return function (value) {
+//           //[012]xxxxxxxxxxx
+//           return true;
+//         };
+//     }
+//   }
+// }
 
-const root = document.querySelector("#root");
-const components = [];
-components.push(Component.render("phone", "Моб.тел."));
-components.push(Component.render("inn", "INN"));
-root.innerHTML = components.join("");
-const phoneValidator = Validator.get("phone");
-const innValidator = Validator.get("inn");
-const phoneInput = document.getElementById("phoneInput");
-const innInput = document.getElementById("innInput");
+// const root = document.querySelector("#root");
+// const components = [];
+// components.push(Component.render("phone", "Моб.тел."));
+// components.push(Component.render("inn", "INN"));
+// root.innerHTML = components.join("");
+// const phoneValidator = Validator.get("phone");
+// const innValidator = Validator.get("inn");
+// const phoneInput = document.getElementById("phoneInput");
+// const innInput = document.getElementById("innInput");
 
-const phoneValidateBtn = document.getElementById("phoneValidateBtn");
-const innValidateBtn = document.getElementById("innValidateBtn");
-phoneValidateBtn.addEventListener(
-  "click",
-  (e) => {
-    const span = document.getElementById("phoneValidationMessage");
-    span.classList = [];
-    if (phoneValidator(phoneInput.value)) {
-      span.innerText = "Success";
-      span.classList.add("valid");
-    } else {
-      span.innerText = "Validation error";
-      span.classList.add("error");
-    }
-  },
-  false
-);
-innValidateBtn.addEventListener("click", () => {
-  const span = document.getElementById("innValidationMessage");
-  span.classList = [];
-  if (innValidator(innInput.value)) {
-    span.innerText = "Success";
-    span.classList.add("valid");
-  } else {
-    span.innerText = "Validation error";
-    span.classList.add("error");
-  }
-});
+// const phoneValidateBtn = document.getElementById("phoneValidateBtn");
+// const innValidateBtn = document.getElementById("innValidateBtn");
+// phoneValidateBtn.addEventListener(
+//   "click",
+//   (e) => {
+//     const span = document.getElementById("phoneValidationMessage");
+//     span.classList = [];
+//     if (phoneValidator(phoneInput.value)) {
+//       span.innerText = "Success";
+//       span.classList.add("valid");
+//     } else {
+//       span.innerText = "Validation error";
+//       span.classList.add("error");
+//     }
+//   },
+//   false
+// );
+// innValidateBtn.addEventListener("click", () => {
+//   const span = document.getElementById("innValidationMessage");
+//   span.classList = [];
+//   if (innValidator(innInput.value)) {
+//     span.innerText = "Success";
+//     span.classList.add("valid");
+//   } else {
+//     span.innerText = "Validation error";
+//     span.classList.add("error");
+//   }
+// });
 
-Array.prototype.First = function () {
-  return this[0];
-};
-Array.prototype.Last = function () {
-  return this[this.length - 1];
-};
-Array.prototype.map = function () {
-  return 0;
-};
+// Array.prototype.First = function () {
+//   return this[0];
+// };
+// Array.prototype.Last = function () {
+//   return this[this.length - 1];
+// };
+// Array.prototype.map = function () {
+//   return 0;
+// };
 
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-console.log(numbers.First());
-console.log(numbers.Last());
-console.log(numbers.map());
+// console.log(numbers.First());
+// console.log(numbers.Last());
+// console.log(numbers.map());
+
+const animal = new Animal(10);
+const pet = new Pet(15, "", null);
+const dog = new Dog("", null);
+const cat = new Cat("", null);
+
+console.log("animal", animal.forChildren);
+console.log("pet", pet.forChildren);
+console.log("cat", cat.forChildren);
+console.log("dog", dog.forChildren);
+
+Animal.getInfo();
+Dog.getInfo();

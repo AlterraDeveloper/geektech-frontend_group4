@@ -1,6 +1,8 @@
 export default class Animal {
   #lifeDuration; //private prop
 
+  forChildren = "children";
+
   constructor(_lifeDuration) {
     console.log("Build, Animal");
     this.#lifeDuration = _lifeDuration;

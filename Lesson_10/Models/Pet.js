@@ -1,5 +1,6 @@
 import Animal from "./Animal";
 
+//Animal -> Pet
 export default class Pet extends Animal {
   owner;
   name;
