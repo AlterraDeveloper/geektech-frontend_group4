@@ -4,38 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color flipper</title>
-
-    <style>
-      .wrapper {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .color-flipper {
-        width: 500px;
-        height: 50px;
-        background-color: #000;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 2rem;
-      }
-    </style>
+    <title>Lesson 11</title>
+    <link rel="stylesheet" href="Lesson_11/styles.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="color-flipper">
-        <div class="text">Background color:</div>
-        <div id="colorValue"></div>
+    <button type="button" id="toUserPage">User page</button>
+    <div class="app-wrapper">
+      <p class="label">ToDoLiSt</p>
+      <div class="todolist">
+        <div class="input-area">
+          <input
+            type="text"
+            id="inputField"
+            class="inputField"
+            placeholder="Start typing next task..."
+          />
+          <select class="selectField" id="filter">
+            <option value="uncompleted">Uncompleted</option>
+            <option value="completed">Completed</option>
+            <option value="all" selected>All</option>
+          </select>
+        </div>
+        <div class="tasks" id="tasks"></div>
       </div>
     </div>
 
-    <script src="ColorFlipper/app.js"></script>
+    <script src="Lesson_11/app.js"></script>
   </body>
 </html>
