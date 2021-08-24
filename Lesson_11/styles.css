@@ -3,6 +3,13 @@ body {
   margin: 0;
 }
 
+#toUserPage{
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+  font-size: 36px;
+}
+
 .app-wrapper {
   width: 100vw;
   height: 100vh;
