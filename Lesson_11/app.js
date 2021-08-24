@@ -117,25 +117,16 @@ class Loader {
   }
 }
 
-// const tasks = document.getElementById("tasks");
-// tasks.innerHTML = Loader.render();
-// setTimeout(() => {
-// fetch("https://jsonplaceholder.typicode.com/todos/")
-//   .then((response) => response.json())
-//   .then((tasksFromServer) => {
-//     var userRequests = tasksFromServer
-//       .filter((task, index) => index < 10)
-//       .map((task) =>
-//         fetch(`https://jsonplaceholder.typicode.com/users/${task.userId}`)
-//       );
-//     console.log(userRequests);
-
-//     Promise.all(userRequests).then((data) => {
-//       console.log(data);
-//     });
-// .then((users) => {
-//   console.log(users);
-// });
+const tasks = document.getElementById("tasks");
+tasks.innerHTML = Loader.render();
+fetch("https://jsonplaceholder.typicode.com/todos/")
+  .then((response) => response.json())
+  .then((tasksFromServer) => {
+    tasks.innerHTML = tasksFromServer
+      .filter((task, index) => index < 10)
+      .map((task) => TodoItem.render(task))
+      .join("");
+  });
 
 //   const tasksComponents = tasksFromServer
 //     .filter((task, index) => index < 10)
@@ -164,21 +155,19 @@ class Loader {
 
 // xhr.send();
 
-fetch("https://restcountries.eu/rest/v2/name/canada?fullText=true")
-  .then((res) => res.json())
-  .then((country) => {
-    console.log(country);
-    console.log(country[0].name);
-    console.log(country[0].capital);
-    console.log(country[0].subregion);
-  });
+// fetch("https://restcountries.eu/rest/v2/name/canada?fullText=true")
+//   .then((res) => res.json())
+//   .then((country) => {
+//     console.log(country);
+//     console.log(country[0].name);
+//     console.log(country[0].capital);
+//     console.log(country[0].subregion);
+//   });
 
-const btn = document.getElementById("toUserPage");
-btn.onclick = () => {
-  document.location = "./user.html";
-};
+// const btn = document.getElementById("toUserPage");
+// btn.onclick = () => {
+//   document.location = "./user.html";
+// };
 
-let age = 5;
-age = "dhivusd"
-
-
+// let age = 5;
+// age = "dhivusd";
